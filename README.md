@@ -21,9 +21,11 @@ Implementação de políticas `default-deny-all` para isolamento total de namesp
 Configuração de `ClusterRoles` de leitura para desenvolvedores, limitando o raio de explosão (*blast radius*) em caso de comprometimento de credenciais.
 
 ## 📖 Como reproduzir
-1. Provisionar uma VM (Ubuntu Server) com 4GB RAM.
+1. Provisionar uma VM (Ubuntu Server) com 4GB RAM e com no minímo duas vCPUs.
 2. Executar o script de setup: `sh scripts/install-k3s.sh`.
-3. Aplicar os manifestos da pasta `argocd/`.
+3. Instale o ArgoCD: kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml.
+4. Aplique o Root App: kubectl apply -f argocd/apps/root-app.yaml.
+5. O ArgoCD fará o provisionamento automático de todas as políticas de segurança.
 
 ## Dicas
 1. Use o modo "sem GUI" no virtualbox para economizar recursos de hardware e simular um ambiente mais próximo do real.
