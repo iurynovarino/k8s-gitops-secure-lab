@@ -2,3 +2,4 @@ resources:
   - policies/rbac/read-only-user.yaml
   - policies/network/default-deny.yaml
   - policies/network/allow-dns.yaml
+  - ../../apps/nginx/nginx-test.yaml
