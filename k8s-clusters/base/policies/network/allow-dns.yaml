@@ -6,15 +6,12 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      run: nginx-test  # Isso deve bater com o label do seu pod
+      run: nginx-test
   policyTypes:
   - Egress
   egress:
-  - to:
-    - namespaceSelector:
-        matchLabels:
-          kubernetes.io/metadata.name: kube-system
-    ports:
+  # Regra para DNS (UDP e TCP porta 53) para qualquer lugar
+  - ports:
     - protocol: UDP
       port: 53
     - protocol: TCP
