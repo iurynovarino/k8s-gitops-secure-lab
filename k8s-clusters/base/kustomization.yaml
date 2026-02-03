@@ -1,0 +1,3 @@
+resources:
+  - ../../policies/rbac/read-only-user.yaml
+  - ../../policies/network/default-deny.yaml
