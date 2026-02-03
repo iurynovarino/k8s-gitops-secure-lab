@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/iurynovarino/k8s-gitops-secure-lab.git
+    targetRevision: HEAD
+    path: k8s-clusters/overlays/production # Onde estão os seus recursos
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true # Aqui está o segredo contra o "kubectl edit" manual! 
