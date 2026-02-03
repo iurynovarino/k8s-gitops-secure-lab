@@ -1,0 +1,27 @@
+# Kubernetes/Kubeconfig
+*.kubeconfig
+kubeconfig.yaml
+config
+
+# Terraform/IaC
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# IDEs (VS Code, JetBrains)
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema e Logs
+*.log
+.DS_Store
+node_modules/
+dist/
+
+# Segredos e Variáveis de Ambiente
+.env
+*.pem
+*.key
