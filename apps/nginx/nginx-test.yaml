@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: nginx-test
   namespace: default
+  labels:
+    run: nginx-test
 spec:
   containers:
   - name: nginx
